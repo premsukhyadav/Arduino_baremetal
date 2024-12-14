@@ -2,7 +2,8 @@
 
 ## Table of Contents
 1. [01_blink_led](01_blink_led)
-1. [02_register_ReadWrite](02_register_ReadWrite)
+2. [02_register_ReadWrite](02_register_ReadWrite)
+3. [03_delay_timer](03_delay_timer)
 
 ## Introduction to Baremetal Programming
 Baremetal programming refers to writing software that interacts directly with the hardware without an operating system or high-level abstractions. It is particularly important in embedded systems for achieving:
