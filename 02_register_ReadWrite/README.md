@@ -1,5 +1,4 @@
 # Register-Level Read/Write Example
----
 
 ## Introduction
 This tutorial is a continuation of the Blink LED example, where we introduced basic baremetal programming. In this example, we remove the dependency on `#include <avr/io.h>` and directly manipulate registers to control the hardware. This approach deepens our understanding of microcontroller architecture and register-level programming.
@@ -74,7 +73,7 @@ clean:
 
 These addresses are derived from the ATmega328P datasheet. They correspond to the memory-mapped I/O locations for the respective registers.
 
-![Register Table](images/register_table.png)
+![register_table](images/register_table.png)
 
 ### Register Access Functions
 - `set_bit`: Sets a specific bit in a register.
