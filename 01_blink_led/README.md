@@ -1,13 +1,7 @@
 # Blink LED Program using Baremetal C Programming
 
 ## Introduction
-Baremetal programming involves writing software that runs directly on the hardware without the overhead of an operating system. This approach is crucial for embedded systems, as it gives developers full control over hardware, enabling efficient use of resources and precise timing control. In this tutorial, we will explore a simple LED blink program written in pure C for an AVR microcontroller, demonstrating the basics of baremetal programming.
-
-## Why Baremetal Programming?
-1. **Efficiency**: Direct hardware access reduces latency and overhead.
-2. **Control**: Fine-grained control over hardware resources and peripherals.
-3. **Understanding**: Helps in understanding low-level hardware functionality.
-4. **Portability**: Provides insights into writing hardware-agnostic code.
+The Blink LED program is often the first step in understanding embedded systems and microcontroller programming. It serves as a simple yet powerful demonstration of how software can directly control hardware. In this example, we will use the built-in LED present on most Arduino boards, such as the Arduino Uno.
 
 ## Code Overview
 This is a simple program to blink an LED connected to an AVR microcontroller. It uses two header files provided by AVR:
@@ -20,10 +14,7 @@ Here we will be using the builtin led on arduino borad which is connected to dig
 
 ![Arduino-Uno pinout](images/Arduino-uno_pinout.png)
 
-
-![Register](images/Register.png)
-
-
+![Registers](images/Registers.png)
 
 ### Code
 ```c
