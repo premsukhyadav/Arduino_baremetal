@@ -16,36 +16,45 @@ This is a simple program to blink an LED connected to an AVR microcontroller. It
 - `#include <util/delay.h>`: Offers a convenient delay function for timing.
 
 However, in subsequent tutorials, we aim to remove these dependencies(`avr/io.h` and `util/delay.h`) to better understand the underlying hardware and create fully self-contained code.
+Here we will be using the builtin led on arduino borad which is connected to digital I/O pin #13, which internally connects to PORTB bit 5.
+
+![Arduino-Uno pinout](images/Arduino-uno_pinout.png)
+
+
+![Register](images/Register.png)
+
+
 
 ### Code
 ```c
 #include <avr/io.h>
 #include <util/delay.h>
 
-#define LED_PIN PB0
+int main() {
+	// set PORTB5 as a output
+    DDRB = DDRB | (1 << DDB5);
 
-int main(void) {
-    // Set LED_PIN as output
-    DDRB |= (1 << LED_PIN);
+    while(1) 
+    {
+        // set PORTB5
+        PORTB = PORTB | (1 << PORTB5);
 
-    while (1) {
-        // Turn LED on
-        PORTB |= (1 << LED_PIN);
+        // wait
         _delay_ms(1000);
 
-        // Turn LED off
-        PORTB &= ~(1 << LED_PIN);
+        // unset PORTB5
+        PORTB = PORTB & ~(1 << PORTB5);
+
+        // wait some more
         _delay_ms(1000);
     }
-
-    return 0; // This line will never be reached
 }
 ```
 
 ### Explanation
 1. **Setting the Direction Register**: The `DDRB` register controls the direction of the pins in port B. Setting `PB0` as output is done using the line:
    ```c
-   DDRB |= (1 << LED_PIN);
+   DDRB = DDRB | (1 << DDB5);
    ```
    This sets the corresponding bit in `DDRB` to `1`.
 
